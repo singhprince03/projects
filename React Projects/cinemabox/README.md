@@ -2,8 +2,7 @@
 
 ## Cinema Box Thumbnail
 
-<img src="" alt="Cinema Box"  width="1000">
-
+<img src="https://user-images.githubusercontent.com/126652325/223187491-7c6f54d7-d47b-4b6f-a33a-20190bbb78fd.png" alt="Cinema Box"  width="1000">
 
 # Getting Started with Create React App
 
