@@ -1,10 +1,10 @@
 # Audio Player
 
-<p align="center"> <img src="https://github.com/singhprince03/projects/tree/main/JS%20Projects/audio_player/images/App_img01.png" alt="singhprince03" /> </p>
+<p align="center"> <img src="https://github.com/singhprince03/projects/tree/main/JS%20Projects/audio_player/images/App_img01.png" alt="Audio Player" /> </p>
 
 **This project is an Audio player App, where you can play and visualizeas well as controll over the visualizer.It is made up with HTML, CSS, JavaScript and Canvas API.**
 
-### Download the project [here](https://drive.google.com/drive/folders/1ZuRO8VxBYHUtoOYC5olFtoL70L23ejV2?usp=sharing)
+### Download the project [here](https://bit.ly/3ZGfhIy)
 
 ### Live [Demo](https://dr-audioplayer.netlify.app/)
 
