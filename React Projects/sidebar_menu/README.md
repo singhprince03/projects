@@ -2,7 +2,7 @@
 
 ## Sidebar Menu Thumbnail
 
-<img src="" alt="Side bar Menu"  width="1000">
+<img src="https://user-images.githubusercontent.com/126652325/223187787-0e647d50-6423-4c02-baf8-3c26fccf85da.png" alt="Side bar Menu"  width="1000">
 
 # Getting Started with Create React App
 
