@@ -2,8 +2,7 @@
 
 ## Pencil Thumbnail
 
-<img src="" alt="Pencil"  width="1000">
-
+<img src="https://user-images.githubusercontent.com/126652325/223187644-4cf9bfe9-b5ea-488b-ba45-ad13f12006fa.png" alt="Pencil"  width="1000">
 
 # Getting Started with Create React App
 
