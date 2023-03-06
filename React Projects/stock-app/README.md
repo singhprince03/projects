@@ -1,3 +1,9 @@
+# React Stock App
+
+## Stock Thumbnail
+
+<img src="" alt="Stock"  width="1000">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

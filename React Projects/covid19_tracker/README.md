@@ -1,8 +1,12 @@
-# React COVID Tracker
+# React COVID Tracker App
 
-## Covid19 Layout
+## Covid19 Thumbnail
 
 <img src="https://user-images.githubusercontent.com/126652325/223169433-c08a7e3d-4ceb-4fbb-adbb-7d53688e4e4f.png" alt="Covid19_Tracker"  width="1000">
+
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

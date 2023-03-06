@@ -1,3 +1,9 @@
+# React Calendar App
+
+## Calendar Thumbnail
+
+<img src="" alt="Calendar"  width="1000">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

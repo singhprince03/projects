@@ -1,3 +1,10 @@
+# React Cinema Box App
+
+## Cinema Box Thumbnail
+
+<img src="" alt="Cinema Box"  width="1000">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

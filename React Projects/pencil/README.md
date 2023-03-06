@@ -1,3 +1,10 @@
+# React Pencil App
+
+## Pencil Thumbnail
+
+<img src="" alt="Pencil"  width="1000">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
