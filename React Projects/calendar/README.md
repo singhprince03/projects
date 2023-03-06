@@ -2,7 +2,7 @@
 
 ## Calendar Thumbnail
 
-<img src="" alt="Calendar"  width="1000">
+<img src="https://user-images.githubusercontent.com/126652325/223187360-ec2485ef-3364-4f46-b6a6-3991b1afd593.png" alt="Calendar"  width="1000">
 
 # Getting Started with Create React App
 
