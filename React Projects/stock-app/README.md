@@ -2,7 +2,7 @@
 
 ## Stock Thumbnail
 
-<img src="" alt="Stock"  width="1000">
+<img src="https://user-images.githubusercontent.com/126652325/223187924-8a08f0f9-312b-437d-a20f-963c100f76ec.png" alt="Stock"  width="1000">
 
 # Getting Started with Create React App
 
