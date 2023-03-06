@@ -2,7 +2,7 @@
 
 ## Covid19 Layout
 
-<img src="https://github.com/singhprince03/projects/tree/main/React%20Projects/covid19_tracker/public/Images/Frame%201%20(2).png" alt="Webpage"  width="1000">
+<img src="https://github.com/singhprince03/projects/tree/main/React%20Projects/covid19_tracker/public/Images/thumbnail.png" alt="Covid19_Tracker"  width="1000">
 
 ## Available Scripts
 
