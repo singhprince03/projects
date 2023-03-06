@@ -2,7 +2,7 @@
 
 ## Boarding Pass Thumbnail
 
-<img src="" alt="Boarding Pass"  width="1000">
+<img src="https://user-images.githubusercontent.com/126652325/223187111-5805883a-44cb-413a-9184-9c4a203ea44a.png" alt="Boarding Pass"  width="1000">
 
 # Getting Started with Create React App
 
