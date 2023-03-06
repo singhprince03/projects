@@ -16,7 +16,7 @@ function getPairs(arr, target) {
 let a = getPairs(arr, 0);
 
 if (a.length == 0) {
-  console.log("No pairs found");
+  console.log('No pairs found');
 } else {
   a.forEach((e) => console.log(e));
 }

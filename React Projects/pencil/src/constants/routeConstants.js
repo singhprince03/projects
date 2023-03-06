@@ -1,3 +1,3 @@
 export const ROUTE_CONSTANT = {
-    ROOT : '/'
-}
+  ROOT: '/',
+};

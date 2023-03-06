@@ -1,47 +1,47 @@
-import React from "react"
-import { useSelector } from "react-redux"
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import "./style.scss"
+import './style.scss';
 
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper"
-import Img from "../../../components/lazyLoadImage/Img"
-import avatar from "../../../assets/avatar.png"
+import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
+import Img from '../../../components/lazyLoadImage/Img';
+import avatar from '../../../assets/avatar.png';
 
 const Cast = ({ data, loading }) => {
-  const { url } = useSelector((state) => state.home)
+  const { url } = useSelector((state) => state.home);
 
   const skeleton = () => {
     return (
-      <div className="skItem">
-        <div className="circle skeleton"></div>
-        <div className="row skeleton"></div>
-        <div className="row2 skeleton"></div>
+      <div className='skItem'>
+        <div className='circle skeleton'></div>
+        <div className='row skeleton'></div>
+        <div className='row2 skeleton'></div>
       </div>
-    )
-  }
+    );
+  };
   return (
-    <div className="castSection">
+    <div className='castSection'>
       <ContentWrapper>
-        <div className="sectionHeading">Top Cast</div>
+        <div className='sectionHeading'>Top Cast</div>
         {!loading ? (
-          <div className="listItems">
+          <div className='listItems'>
             {data?.map((item) => {
-                const imgUrl = item.profile_path
-                  ? url.profile + item.profile_path
-                  : avatar
+              const imgUrl = item.profile_path
+                ? url.profile + item.profile_path
+                : avatar;
               return (
-                <div key={item.id} className="listItem">
-                  <div className="profileImg">
+                <div key={item.id} className='listItem'>
+                  <div className='profileImg'>
                     <Img src={imgUrl} />
-                      </div>
-                      <div className="name">{ item.name}</div>
-                      <div className="character">{ item.character}</div>
+                  </div>
+                  <div className='name'>{item.name}</div>
+                  <div className='character'>{item.character}</div>
                 </div>
-              )
+              );
             })}
           </div>
         ) : (
-          <div className="castSkeleton">
+          <div className='castSkeleton'>
             {skeleton()}
             {skeleton()}
             {skeleton()}
@@ -52,7 +52,7 @@ const Cast = ({ data, loading }) => {
         )}
       </ContentWrapper>
     </div>
-  )
-}
+  );
+};
 
-export default Cast
+export default Cast;

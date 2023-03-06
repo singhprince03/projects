@@ -1,11 +1,17 @@
-import React from 'react'
-import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin, IoLogoTwitter, IoLogoYoutube } from 'react-icons/io5';
+import React from 'react';
+import {
+  IoLogoFacebook,
+  IoLogoInstagram,
+  IoLogoLinkedin,
+  IoLogoTwitter,
+  IoLogoYoutube,
+} from 'react-icons/io5';
 
 const Footer = () => {
   return (
-    <div className="bg-chinese_black text-white px-10 py-4 pt-10 flex justify-between">
-      <div className="flex-1 flex flex-col justify-between text-sm ml-20">
-        <h1 className="text-3xl font-Ubuntu text-mustard font-semibold">
+    <div className='bg-chinese_black text-white px-10 py-4 pt-10 flex justify-between'>
+      <div className='flex-1 flex flex-col justify-between text-sm ml-20'>
+        <h1 className='text-3xl font-Ubuntu text-mustard font-semibold'>
           Pencil
         </h1>
         <div>
@@ -29,7 +35,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex gap-4 flex-1 justify-evenly text-sm font-light footer-links">
+      <div className='flex gap-4 flex-1 justify-evenly text-sm font-light footer-links'>
         <ul>
           <li>Career</li>
           <li>Blog</li>
@@ -49,6 +55,6 @@ const Footer = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

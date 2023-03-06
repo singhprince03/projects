@@ -2,7 +2,6 @@
   margin: 0;
 }
 
-
 .app {
   display: flex;
   justify-content: space-evenly;
@@ -10,14 +9,14 @@
   padding: 20px;
 }
 
-.app__covidlogo{
+.app__covidlogo {
   display: flex;
   align-items: center;
 }
-.app__covidlogo > span{
+.app__covidlogo > span {
   font-size: 36px;
   text-transform: uppercase;
-  margin-left:6px;
+  margin-left: 6px;
   font-weight: 400;
   color: #1c1c1c;
 }

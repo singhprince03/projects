@@ -1,94 +1,94 @@
-import React, { useEffect, useState } from "react"
-import "./style.scss"
-import logo from "../../assets/cinemabox.png"
+import React, { useEffect, useState } from 'react';
+import './style.scss';
+import logo from '../../assets/cinemabox.png';
 
-import { MdSearch, MdMenu, MdClose } from "react-icons/md"
-import ContentWrapper from "../contentWrapper/ContentWrapper"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { MdSearch, MdMenu, MdClose } from 'react-icons/md';
+import ContentWrapper from '../contentWrapper/ContentWrapper';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const [show, setShow] = useState("top")
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [mobileMenu, setMobileMenu] = useState(false)
-  const [query, setQuery] = useState("")
-  const [showSearch, setShowSearch] = useState("")
-  const navigate = useNavigate()
-  const location = useLocation()
+  const [show, setShow] = useState('top');
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [query, setQuery] = useState('');
+  const [showSearch, setShowSearch] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const openSearch = () => {
-    setMobileMenu(false)
-    setShowSearch(true)
-  }
+    setMobileMenu(false);
+    setShowSearch(true);
+  };
 
   const openMobileMenu = () => {
-    setMobileMenu(true)
-    setShowSearch(false)
-  }
+    setMobileMenu(true);
+    setShowSearch(false);
+  };
 
   const searchQueryHandler = (e) => {
-    if ((e.key === "Enter") & (query.length > 0)) {
-      navigate(`/search/${query}`)
+    if ((e.key === 'Enter') & (query.length > 0)) {
+      navigate(`/search/${query}`);
       setTimeout(() => {
-        setShowSearch(false)
-      }, 500)
+        setShowSearch(false);
+      }, 500);
     }
-  }
+  };
 
   const navigationHandler = (type) => {
-    if (type === "movie") {
-      navigate("explore/movie")
-    } else if (type === "tv") {
-      navigate("explore/tv")
+    if (type === 'movie') {
+      navigate('explore/movie');
+    } else if (type === 'tv') {
+      navigate('explore/tv');
     }
-    setMobileMenu(false)
-  }
+    setMobileMenu(false);
+  };
 
   const controlNavbar = () => {
     if (window.scrollY > 200) {
       if (window.scrollY > lastScrollY && !mobileMenu) {
-        setShow("hide")
+        setShow('hide');
       } else {
-        setShow("show")
+        setShow('show');
       }
     } else {
-      setShow("top")
+      setShow('top');
     }
-    setLastScrollY(window.scrollY)
-  }
+    setLastScrollY(window.scrollY);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", controlNavbar)
+    window.addEventListener('scroll', controlNavbar);
 
     return () => {
-      window.removeEventListener("scroll", controlNavbar)
-    }
+      window.removeEventListener('scroll', controlNavbar);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastScrollY])
+  }, [lastScrollY]);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location])
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
-    <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
+    <header className={`header ${mobileMenu ? 'mobileView' : ''} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
-          <Link to="/">
-            <img src={logo} alt="" />
+        <div className='logo'>
+          <Link to='/'>
+            <img src={logo} alt='' />
           </Link>
         </div>
-        <ul className="menuItems">
-          <li className="menuItem" onClick={() => navigationHandler("movie")}>
+        <ul className='menuItems'>
+          <li className='menuItem' onClick={() => navigationHandler('movie')}>
             Movies
           </li>
-          <li className="menuItem" onClick={() => navigationHandler("tv")}>
+          <li className='menuItem' onClick={() => navigationHandler('tv')}>
             TV Shows
           </li>
-          <li className="menuItem">
-            <MdSearch className="searchIcon" onClick={openSearch} />
+          <li className='menuItem'>
+            <MdSearch className='searchIcon' onClick={openSearch} />
           </li>
         </ul>
-        <div className="mobileMenuItems">
+        <div className='mobileMenuItems'>
           <MdSearch onClick={openSearch} />
           {mobileMenu ? (
             <MdClose onClick={() => setMobileMenu(false)} />
@@ -98,16 +98,16 @@ const Header = () => {
         </div>
       </ContentWrapper>
       {showSearch && (
-        <div className="searchBar">
+        <div className='searchBar'>
           <ContentWrapper>
-            <div className="searchInput">
+            <div className='searchInput'>
               <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Search for a movie or TV shows..."
+                type='text'
+                name=''
+                id=''
+                placeholder='Search for a movie or TV shows...'
                 onChange={(e) => {
-                  setQuery(e.target.value)
+                  setQuery(e.target.value);
                 }}
                 onKeyUp={searchQueryHandler}
               />
@@ -117,7 +117,7 @@ const Header = () => {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

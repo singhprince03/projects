@@ -1,20 +1,20 @@
 //--------------------start--------------------
-let music = document.getElementById("music");
-let canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
+let music = document.getElementById('music');
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
 
-let muteBtn = document.getElementById("mutebtn");
-let startBtn = document.getElementById("startbtn");
-let stopBtn = document.getElementById("stopbtn");
-let timelineBar = document.getElementById("timelineBar");
+let muteBtn = document.getElementById('mutebtn');
+let startBtn = document.getElementById('startbtn');
+let stopBtn = document.getElementById('stopbtn');
+let timelineBar = document.getElementById('timelineBar');
 // let pauseBtn = document.getElementById('pausebtn')
 // let timeline = document.getElementById('timeline')
-let start_stop_Img = document.getElementById("start_stop_Img")
-let mute_Img = document.getElementById("mute_Img")
-let tooltip = document.getElementById("tooltips")
-let totalDuration = document.getElementById("totalDuration")
-let currentTimeline = document.getElementById("currentTimeline")
-let audioSrc = document.getElementById("audioSrc")
+let start_stop_Img = document.getElementById('start_stop_Img');
+let mute_Img = document.getElementById('mute_Img');
+let tooltip = document.getElementById('tooltips');
+let totalDuration = document.getElementById('totalDuration');
+let currentTimeline = document.getElementById('currentTimeline');
+let audioSrc = document.getElementById('audioSrc');
 
 let posX = 0;
 let posY = canvas.offsetHeight - 30 || 50;
@@ -22,72 +22,84 @@ let width = 1;
 let minHeight = 5;
 let maxHeight = 60;
 let currentCursorPosition = 0;
-let skeletonColor = "#ccc";
-let waveformColor = "red";
-let songsNum = 0
-let songs = ['aaa.mp3','bbb.mp3','Aila Re Aillaa Sooryavanshi 320 Kbps.mp3','Tip Tip Barsa Pani - Sooryavanshi_320(PagalWorld.com.se).mp3','Spectrum - Home (feat. Ria Choony)(INSTRUMENTAL)_1.mp3']
-
+let skeletonColor = '#ccc';
+let waveformColor = 'red';
+let songsNum = 0;
+let songs = [
+  'aaa.mp3',
+  'bbb.mp3',
+  'Aila Re Aillaa Sooryavanshi 320 Kbps.mp3',
+  'Tip Tip Barsa Pani - Sooryavanshi_320(PagalWorld.com.se).mp3',
+  'Spectrum - Home (feat. Ria Choony)(INSTRUMENTAL)_1.mp3',
+];
 
 function shuffelSong() {
-    songsNum++
-    if(songsNum >= songs.length){songsNum = 0}
-    audioSrc.src = `./media/${songs[songsNum]}`
-    music.load()
+  songsNum++;
+  if (songsNum >= songs.length) {
+    songsNum = 0;
+  }
+  audioSrc.src = `./media/${songs[songsNum]}`;
+  music.load();
 
-    start_stop_Img.src = "https://img.icons8.com/fluency/48/000000/pause.png"
-    
+  start_stop_Img.src = 'https://img.icons8.com/fluency/48/000000/pause.png';
 
-    music.play();
-      music.ontimeupdate = function () {
-          if (music.currentTime == music.duration) {
-              console.log("Finished")
-              startBtn.value = "stop";
-    start_stop_Img.src = "https://img.icons8.com/fluency/45/000000/play.png"
-          }
-        console.log("music duratuin-",music.duration,"current time - ",music.currentTime);
-        currentTimeline.innerText = fmtMSS(music.currentTime)
-          totalDuration.innerText = fmtMSS(music.duration)
-      if (music.currentTime === 0) {
-        drawSkeleton();
-        currentCursorPosition = 0;
-      } else {
-        drawWaveform();
-        currentCursorPosition = Math.floor(
-          (music.currentTime / music.duration) * 100
-        );
-      }
-      };
-//   }
+  music.play();
+  music.ontimeupdate = function () {
+    if (music.currentTime == music.duration) {
+      console.log('Finished');
+      startBtn.value = 'stop';
+      start_stop_Img.src = 'https://img.icons8.com/fluency/45/000000/play.png';
+    }
+    console.log(
+      'music duratuin-',
+      music.duration,
+      'current time - ',
+      music.currentTime
+    );
+    currentTimeline.innerText = fmtMSS(music.currentTime);
+    totalDuration.innerText = fmtMSS(music.duration);
+    if (music.currentTime === 0) {
+      drawSkeleton();
+      currentCursorPosition = 0;
+    } else {
+      drawWaveform();
+      currentCursorPosition = Math.floor(
+        (music.currentTime / music.duration) * 100
+      );
+    }
+  };
+  //   }
 }
 
-
-    
-
-
-startBtn.addEventListener("click", startAnimation);
-stopBtn.addEventListener("click", stopAnimation);
-muteBtn.addEventListener("click", muteAudio);
+startBtn.addEventListener('click', startAnimation);
+stopBtn.addEventListener('click', stopAnimation);
+muteBtn.addEventListener('click', muteAudio);
 // pauseBtn.addEventListener('click', pauseAnimation)
-tooltip.addEventListener('click', hideTags)
+tooltip.addEventListener('click', hideTags);
 
 //--------------------Animation Start/pause--------------------
 function startAnimation() {
-  if (startBtn.value === "stop") {
-    startBtn.value = "start";
+  if (startBtn.value === 'stop') {
+    startBtn.value = 'start';
     // startBtn.innerHTML = `pause`;
-    start_stop_Img.src = "https://img.icons8.com/fluency/48/000000/pause.png"
-    
+    start_stop_Img.src = 'https://img.icons8.com/fluency/48/000000/pause.png';
 
     music.play();
-      music.ontimeupdate = function () {
-          if (music.currentTime == music.duration) {
-              console.log("Finished")
-              startBtn.value = "stop";
-    start_stop_Img.src = "https://img.icons8.com/fluency/45/000000/play.png"
-          }
-        console.log("music duratuin-",music.duration,"current time - ",music.currentTime);
-        currentTimeline.innerText = fmtMSS(music.currentTime)
-          totalDuration.innerText = fmtMSS(music.duration)
+    music.ontimeupdate = function () {
+      if (music.currentTime == music.duration) {
+        console.log('Finished');
+        startBtn.value = 'stop';
+        start_stop_Img.src =
+          'https://img.icons8.com/fluency/45/000000/play.png';
+      }
+      console.log(
+        'music duratuin-',
+        music.duration,
+        'current time - ',
+        music.currentTime
+      );
+      currentTimeline.innerText = fmtMSS(music.currentTime);
+      totalDuration.innerText = fmtMSS(music.duration);
       if (music.currentTime === 0) {
         drawSkeleton();
         currentCursorPosition = 0;
@@ -97,11 +109,11 @@ function startAnimation() {
           (music.currentTime / music.duration) * 100
         );
       }
-      };
+    };
   } else {
-    startBtn.value = "stop";
+    startBtn.value = 'stop';
     // startBtn.innerText = "start";
-      start_stop_Img.src = "https://img.icons8.com/fluency/45/000000/play.png"
+    start_stop_Img.src = 'https://img.icons8.com/fluency/45/000000/play.png';
     music.pause();
   }
 }
@@ -115,40 +127,41 @@ function startAnimation() {
 function stopAnimation() {
   music.currentTime = 0;
   music.pause();
-  startBtn.value = "stop";
-//   startBtn.innerText = "start";
-    start_stop_Img.src = "https://img.icons8.com/fluency/45/000000/play.png"
+  startBtn.value = 'stop';
+  //   startBtn.innerText = "start";
+  start_stop_Img.src = 'https://img.icons8.com/fluency/45/000000/play.png';
 }
 
 function muteAudio() {
-  if (muteBtn.value === "unmute") {
+  if (muteBtn.value === 'unmute') {
     music.muted = true;
-      muteBtn.value = "mute";
-      mute_Img.src = 'https://img.icons8.com/fluency/30/000000/mute.png'
-     
+    muteBtn.value = 'mute';
+    mute_Img.src = 'https://img.icons8.com/fluency/30/000000/mute.png';
+
     // muteBtn.innerText = "unmute";
   } else {
     music.muted = false;
-      muteBtn.value = "unmute";
-       mute_Img.src = 'https://img.icons8.com/fluency/30/000000/high-volume.png'
+    muteBtn.value = 'unmute';
+    mute_Img.src = 'https://img.icons8.com/fluency/30/000000/high-volume.png';
     // muteBtn.innerText = "mute";
-     
   }
 }
 
 function hideTags() {
-    tooltip.classList.add("removeTooltips")
+  tooltip.classList.add('removeTooltips');
 }
 
 // --------------------AudioPlayList--------------------
 // function AudioPlayList() {
-    
+
 // }
 
-function fmtMSS(s){return((s-(s%=60))/60+(9<s?':':':0')+s.toFixed(0))}
+function fmtMSS(s) {
+  return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s.toFixed(0);
+}
 
 music.ontimeupdate = function () {
-  console.log("music complete % -", 100 * (music.currentTime / music.duration));
+  console.log('music complete % -', 100 * (music.currentTime / music.duration));
   timeline.style.width = `${(music.currentTime / music.duration) * 100}%`;
 };
 
@@ -173,7 +186,7 @@ function genarateNewWaveform() {
     wave.push({ pos, height: getRandomIntiger(5, 60) });
     pos += 3;
   }
-  localStorage.setItem("waves", JSON.stringify(wave));
+  localStorage.setItem('waves', JSON.stringify(wave));
   location.reload();
 }
 function genarateNewWaveformOnce() {
@@ -184,11 +197,11 @@ function genarateNewWaveformOnce() {
     wave.push({ pos, height: getRandomIntiger(5, 60) });
     pos += 3;
   }
-  localStorage.setItem("waves", JSON.stringify(wave));
+  localStorage.setItem('waves', JSON.stringify(wave));
 }
 
 // --------------------Extracting value from localStorage--------------------
-let wave = JSON.parse(localStorage.getItem("waves"));
+let wave = JSON.parse(localStorage.getItem('waves'));
 // console.log(wave)
 
 function drawSkeleton() {
@@ -232,7 +245,7 @@ function skipWaveform() {
 }
 
 window.onload = function () {
-  genarateNewWaveformOnce()
-  wave = JSON.parse(localStorage.getItem("waves"));
+  genarateNewWaveformOnce();
+  wave = JSON.parse(localStorage.getItem('waves'));
   drawSkeleton();
 };

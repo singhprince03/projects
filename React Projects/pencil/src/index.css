@@ -13,21 +13,21 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
   /* font-family: 'Ubuntu', sans-serif; */
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.swiper{
-  overflow: visible!important;
+.swiper {
+  overflow: visible !important;
 }
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @layer components {
@@ -47,4 +47,3 @@ code {
     @apply py-1 capitalize text-white hover:text-ghost_white2 hover:cursor-pointer;
   }
 }
-

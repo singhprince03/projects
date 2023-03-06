@@ -1,7 +1,7 @@
 .infoBox {
   flex: 1;
 }
-.infoBox:hover{
+.infoBox:hover {
   cursor: pointer;
 }
 

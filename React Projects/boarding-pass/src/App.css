@@ -1,19 +1,19 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-.App{
+.App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #FFDEA9;
+  background-color: #ffdea9;
   padding: 2rem;
 }
 
-.container{
+.container {
   display: flex;
   width: 70%;
   /* padding: 0.4rem; */
@@ -23,7 +23,7 @@
   border-radius: 1rem;
   overflow: hidden;
 }
-.qrcode{
+.qrcode {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,33 +32,34 @@
   border-radius: 1rem;
   position: relative;
 }
-.qrcode img{
+.qrcode img {
   height: 250px;
   object-fit: cover;
 }
-.strip{
+.strip {
   height: 240px;
   width: 1px;
   background-color: transparent;
-  border-right: 6px dashed #FFDEA9;
+  border-right: 6px dashed #ffdea9;
   position: absolute;
   right: -2px;
 }
-.cuttop,.cutbot{
-  background-color: #FFDEA9;
+.cuttop,
+.cutbot {
+  background-color: #ffdea9;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   position: absolute;
   right: -16px;
 }
-.cuttop{
+.cuttop {
   top: -15px;
 }
-.cutbot{
+.cutbot {
   bottom: -15px;
 }
-.info{
+.info {
   flex: 0.7;
   background-color: white;
   border-radius: 1rem;
@@ -68,7 +69,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.info__station{
+.info__station {
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -79,52 +80,52 @@
   flex-direction: column;
   align-items: center;
 }
-.info__station .station__name h1{
+.info__station .station__name h1 {
   font-size: 64px;
   color: #303030;
 }
-.info__station .station__name p{
+.info__station .station__name p {
   color: #bbb;
   font-size: 14px;
   font-weight: 500;
 }
-.info__passenger{
+.info__passenger {
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
-.info__passenger div p:nth-child(1){
+.info__passenger div p:nth-child(1) {
   color: #bbb;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
 }
-.info__passenger div p:nth-child(2){
+.info__passenger div p:nth-child(2) {
   color: #303030;
   font-size: 15px;
   font-weight: bold;
   text-transform: capitalize;
 }
-.airplaneDot{
+.airplaneDot {
   height: 4px;
   width: 30px;
 }
-.info__icons{
+.info__icons {
   /* width: 200px; */
   display: flex;
   width: 50%;
   justify-content: space-between;
   align-items: center;
 }
-.airplaneDot{
+.airplaneDot {
   width: 40%;
-  border-top: 6px dotted #FFDEA9;
+  border-top: 6px dotted #ffdea9;
 }
-.download-section{
+.download-section {
   margin-top: 2rem;
 }
 
-.download{
+.download {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.4rem;
@@ -133,7 +134,7 @@
   color: whitesmoke;
   margin: 1rem;
 }
-.download:hover{
+.download:hover {
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
