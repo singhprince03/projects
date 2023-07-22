@@ -3663,9 +3663,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"authApp@workspace:.":
+"authapp@workspace:.":
   version: 0.0.0-use.local
-  resolution: "authApp@workspace:."
+  resolution: "authapp@workspace:."
   dependencies:
     "@babel/core": ^7.20.0
     "@expo/webpack-config": ^18.1.1
